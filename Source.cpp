@@ -30,7 +30,7 @@ struct Profile
 
 		Profile* StudentInfo = 0;
 		int StudentAmount = 0;
-		int YesOrNot = 0; //  продолжить или остановить ввод данных
+		int YesOrNot = 0; //  ГЇГ°Г®Г¤Г®Г«Г¦ГЁГІГј ГЁГ«ГЁ Г®Г±ГІГ Г­Г®ГўГЁГІГј ГўГўГ®Г¤ Г¤Г Г­Г­Г»Гµ
 
 		do
 		{
@@ -39,7 +39,7 @@ struct Profile
 
 			StudentAmount++;
 
-			cout << "Продолжить ввод данных (1 - да, 0 - нет): "<<endl;
+			cout << "РџСЂРѕРґРѕР»Р¶РёС‚СЊ РІРІРѕРґ РґР°РЅРЅС‹С… (1 - РґР°, 0 - РЅРµС‚): "<<endl;
 			cin >> YesOrNot;
 			cin.get();
 		} while (YesOrNot != 0);
@@ -56,7 +56,7 @@ struct Profile
 	{
 		if (amount == 0)
 		{
-			Obj = new Profile[amount + 1]; // выделение памяти для первой структуры
+			Obj = new Profile[amount + 1]; // ГўГ»Г¤ГҐГ«ГҐГ­ГЁГҐ ГЇГ Г¬ГїГІГЁ Г¤Г«Гї ГЇГҐГ°ГўГ®Г© Г±ГІГ°ГіГЄГІГіГ°Г»
 		}
 		else
 		{
@@ -64,7 +64,7 @@ struct Profile
 
 			for (int i = 0; i < amount; i++)
 			{
-				tempObj[i] = Obj[i]; // копируем во временный объект
+				tempObj[i] = Obj[i]; // ГЄГ®ГЇГЁГ°ГіГҐГ¬ ГўГ® ГўГ°ГҐГ¬ГҐГ­Г­Г»Г© Г®ГЎГєГҐГЄГІ
 			}
 			delete[] Obj;
 
@@ -75,21 +75,21 @@ struct Profile
 
 	void setData(Profile * Obj, const int amount)
 	{
-		cout << "Id студента: ";
+		cout << "Id СЃС‚СѓРґРµРЅС‚Р°: ";
 		cin >> Obj[amount].id;
 		cout << Obj[amount].id;
-		/*cout << "ФИО: ";
+		/*cout << "Р¤РРћ: ";
 		cin>>Obj[amount].FIO;*/
 		//cout << Obj[amount].FIO;
-		cout << "Пол студента: ";
+		cout << "РџРѕР» СЃС‚СѓРґРµРЅС‚Р°: ";
 		cout << Obj[amount].gender;
-		cout << "Номер группы: ";
+		cout << "РќРѕРјРµСЂ РіСЂСѓРїРїС‹: ";
 		cout << Obj[amount].group;
-		cout << "Оценки за экзамен и диф.зачеты: ";
+		cout << "РћС†РµРЅРєРё Р·Р° СЌРєР·Р°РјРµРЅ Рё РґРёС„.Р·Р°С‡РµС‚С‹: ";
 		for (int i = 0; i < 8; i++) {
 			cin >> Obj[i].grades[i];
 		}
-		cout << "Форма обучения: ";
+		cout << "Р¤РѕСЂРјР° РѕР±СѓС‡РµРЅРёСЏ: ";
 		cin >> Obj[amount].depart;
 		cin.get();
 		cout << endl;
@@ -97,7 +97,7 @@ struct Profile
 
 	void showData(const Profile* Obj, const int amount)
 	{
-		cout << "Id " << "ФИО\t" << "Пол\t" << "Группа\t" << "Оценки за экзамены и диф.зачеты\t" << "Форма обучения\t"<< endl;
+		cout << "Id " << "Р¤РРћ\t" << "РџРѕР»\t" << "Р“СЂСѓРїРїР°\t" << "РћС†РµРЅРєРё Р·Р° СЌРєР·Р°РјРµРЅС‹ Рё РґРёС„.Р·Р°С‡РµС‚С‹\t" << "Р¤РѕСЂРјР° РѕР±СѓС‡РµРЅРёСЏ\t"<< endl;
 		for (int i = 1; i < amount+1; i++)
 		{
 			cout << Obj[i].id<<'\t'<<'\t' << Obj[i].gender << '\t' << Obj[i].group<< '\t' << Obj[i].grades[i] << '\t' << Obj[i].depart << endl;
@@ -107,7 +107,7 @@ struct Profile
     
 	void viewStgroup(const Profile* Obj, const int amount) {
 		int N;
-		cout << "Введите номер группы студентов, которых хотите просмотреть " << endl;
+		cout << "Р’РІРµРґРёС‚Рµ РЅРѕРјРµСЂ РіСЂСѓРїРїС‹ СЃС‚СѓРґРµРЅС‚РѕРІ, РєРѕС‚РѕСЂС‹С… С…РѕС‚РёС‚Рµ РїСЂРѕСЃРјРѕС‚СЂРµС‚СЊ " << endl;
 		cin >> N;
 		for (int i = 1; i < amount + 1; i++)
 		{
@@ -118,11 +118,10 @@ struct Profile
 	}
 	void viewStgender(Profile* Obj, const int amount) {
 		int k, c1 = 0, c2 = 0;;
-		char M='м', F='ж';
-		cout << "Какой пол студентов, которых вы хотите просмотреть? (1-мужской, 0-женский) " << endl;
-		cin >> k;
+		char M='Г¬', F='Г¦';
+		cout << "РљР°РєРѕР№ РїРѕР» СЃС‚СѓРґРµРЅС‚РѕРІ, РєРѕС‚РѕСЂС‹С… РІС‹ С…РѕС‚РёС‚Рµ РїСЂРѕСЃРјРѕС‚СЂРµС‚СЊ? (1-РјСѓР¶СЃРєРѕР№, 0-Р¶РµРЅСЃРєРёР№) " << endl;
 		for (int i = 1; i < amount + 1; i++){
-			char M='м', F='ж';
+			char M='Г¬', F='Г¦';
 			if (Obj[i].gender = F) {
 				c1 += 1;
 			}
@@ -140,7 +139,7 @@ struct Profile
 	
 	void viewStnumber(const Profile* Obj, const int amount) {
 		int N;
-		cout << "Введите id студента, которого хотите просмотреть " << endl;
+		cout << "Р’РІРµРґРёС‚Рµ id СЃС‚СѓРґРµРЅС‚Р°, РєРѕС‚РѕСЂРѕРіРѕ С…РѕС‚РёС‚Рµ РїСЂРѕСЃРјРѕС‚СЂРµС‚СЊ " << endl;
 		cin >> N;
 		for (int i = 1; i < amount + 1; i++)
 		{
@@ -148,7 +147,7 @@ struct Profile
 				cout << Obj[i].id << '\t'  << '\t' << Obj[i].gender << Obj[i].group << '\t' << Obj[i].grades << Obj[i].depart << endl;
 			}
 			else {
-				cout << "Студент с id " << N << " не найден" << endl;
+				cout << РЎС‚СѓРґРµРЅС‚ СЃ id " << N << " РЅРµ РЅР°Р№РґРµРЅ" << endl;
 			}
 		}
 	}
@@ -169,12 +168,12 @@ struct Profile
 			else {
 				top = Obj[f].topgrades;
 			}
-			cout << "Самый высокий рейтинг "<<top;
+			cout << "РЎР°РјС‹Р№ РІС‹СЃРѕРєРёР№ СЂРµР№С‚РёРЅРі "<<top;
 		}
 	}
 	void editprofile(const Profile* Obj, const int amount) {
 		int N;
-		cout << "Введите id студента, запись которого вы хотите изменить " << endl;
+		cout << "Р’РІРµРґРёС‚Рµ id СЃС‚СѓРґРµРЅС‚Р°, Р·Р°РїРёСЃСЊ РєРѕС‚РѕСЂРѕРіРѕ РІС‹ С…РѕС‚РёС‚Рµ РёР·РјРµРЅРёС‚СЊ " << endl;
 		cin >> N;
 		for (int i = 1; i < amount + 1; i++)
 		{
@@ -182,7 +181,7 @@ struct Profile
 
 			}
 			else {
-				cout << "Студент с id " << N << " не найден" << endl;
+				cout << "Г‘ГІГіГ¤ГҐГ­ГІ Г± id " << N << " Г­ГҐ Г­Г Г©Г¤ГҐГ­" << endl;
 			}
 		}
 	}
